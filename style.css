@@ -20,7 +20,7 @@ body,
 body {
   background-color: #0f171e;
 }
-.images img {
+/* .images img {
   position: absolute;
   top: -11px;
 }
@@ -34,4 +34,15 @@ body {
   left: 4px;
   height: 26px;
   margin-top: -280px;
+}
+ */
+
+ .section-title {
+  position: relative;
+  left: -11px;
+ }
+
+.section-title img {
+  position: relative;
+  top: -3px;
 }
