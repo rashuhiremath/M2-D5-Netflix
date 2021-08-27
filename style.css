@@ -3,10 +3,10 @@ body{
 }
 .images img{
     position: absolute;
-  top: -11px;
+  top: -11px
 }
 .images{
-    position: absolute;
+    position: relative;
   left: 0px;
 }
 .prime-badge {
