@@ -72,3 +72,7 @@ font-size:16px;
     flex-direction: column;
     flex-wrap: wrap;
   }
+footer{
+  background-color: #0f171e(0, 0, 0, 0.05)
+}
+
