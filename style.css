@@ -2,10 +2,17 @@ body{
     background-color: #0f171e;
 }
 .images img{
-    position: relative;
+    position: absolute;
   top: -11px;
 }
 .images{
-    position: relative;
+    position: absolute;
   left: 0px;
 }
+.prime-badge {
+    position: relative;
+    top: 10px;
+    left: 4px;
+    height: 26px;  
+margin-top: -280px;
+  }
