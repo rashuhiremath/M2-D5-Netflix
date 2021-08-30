@@ -20,6 +20,26 @@ body,
 body {
   background-color: #0f171e;
 }
+.blog-footer {
+  /* padding: 2.5rem 0; */
+  color: grey;
+  /* text-align: center; */
+  background-color: black;
+  padding-top: 5%;
+  margin-top: 5%;
+  /* border-top: 0.05rem solid #e5e5e5; */
+}
+.table {
+  color: grey;
+  background-color: black;
+}
+a {
+  color: grey;
+}
+.btn {
+  background-color: black;
+  border-color: black;
+}
 /* .images img {
   position: absolute;
   top: -11px;
@@ -72,7 +92,4 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
   }
-}
-.jumbotron {
-  background-color: black;
 }
