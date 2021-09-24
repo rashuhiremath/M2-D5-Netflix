@@ -78,6 +78,18 @@
         </div>
       </nav>
 
+      <div class="dropdown">
+        <a  class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         TV Shows
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="./movie_details.html?category=${}">Horror</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+
       <div class="conatainer pl-md-5 section-title ml-2 mr-3">
         <div class="row text-white mt-4 mb-2">Trending Now</div>
 
@@ -397,5 +409,52 @@ Netflix US
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const url = "https://striveschool-api.herokuapp.com/api/movies"
+         const category = new URLSearchParams(window.location.search).get("category")
+
+
+     window.onload =  async () =>{
+         
+         console.log("the id is", category)
+         try{
+             const response = await fetch(url + category ,{
+                
+headers: {
+"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgxN2M1ZWU3ODE4NzAwMTVjMjY3YTgiLCJpYXQiOjE2MzI0NzM3ODcsImV4cCI6MTYzMzY4MzM4N30.iDFjP-0yncSf0XzgguNCyxqw0NZjCTzPEdy5Scv9s98"
+}
+})
+             const createdObj = await response.json()
+             console.log(createdObj)
+              
+              const container = document.querySelector(".details")
+
+              const { name,price,description, imageUrl, brand } = createdObj
+
+              //  <li class="list-group-item"><strong>_id:</strong>${_id}</li>
+              //  <li class="list-group-item"><strong>createdAt:</strong>${createdAt}</li>
+              //  <li class="list-group-item"><strong>updatedAt:</strong>${updatedAt}</li> 
+              container.innerHTML = `
+              <h1 class="font-weight-bolder"><strong>name:</strong>${name}</h1>
+ 
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>discription:</strong>${description}</li>
+                <li class="list-group-item"><strong>brand:</strong>${brand}</li>
+                <li class="list-group-item"><strong>price:</strong>${price}</li>
+                <li><h6 class="bg-light">server details</h6></li>
+                <li><img src="${imageUrl}"></li>
+                
+
+            </ul> 
+ `
+         }
+      catch (err){
+         console.log(err)
+     }
+    }
+
+    
+    </script>
   </body>
 </html>
